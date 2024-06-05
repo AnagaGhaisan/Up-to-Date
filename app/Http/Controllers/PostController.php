@@ -1,10 +1,15 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
+
 use App\Models\Post;
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
 
 class PostController extends Controller
 {
@@ -75,16 +80,14 @@ class PostController extends Controller
     }
 
 
-
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-       //
-       $post = Post::findOrFail($id);
-       return view('post.edit',compact('post'));
-
+        //
+        $post = Post::findOrFail($id);
+        return view('post.edit',compact('post'));
     }
 
 
@@ -94,8 +97,8 @@ class PostController extends Controller
    
     public function update(Request $request, string $id)
         {
-             // Validasi data
-             $this->validate($request, [
+            // Validasi data
+            $this->validate($request, [
                 'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
                 'title' => 'required|string|max:255',
                 'description' => 'required|string|max:500',
@@ -132,7 +135,7 @@ class PostController extends Controller
             }
        
             // Redirect ke halaman index
-            return redirect()->route('post.index'); 
+            return redirect()->route('post.index');
         }
        
 
@@ -142,8 +145,6 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-       
-
         //get post by ID
         $post = Post::findOrFail($id);
 
@@ -158,6 +159,5 @@ class PostController extends Controller
 
         //redirect to index
         return redirect()->route('post.index');
-
     }
 }

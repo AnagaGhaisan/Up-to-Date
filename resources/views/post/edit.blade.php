@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir dengan Flowbite</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css">
+    @vite('resources/css/app.css')
 </head>
 <body class="font-sans antialiased">
-
 
     <div class="container mx-auto p-8">
         <form action="{{ route('post.update' , $post->id)}}" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 gap-6">

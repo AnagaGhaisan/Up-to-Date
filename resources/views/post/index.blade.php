@@ -8,25 +8,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    @vite('resources/css/app.css')
     <title>News</title>
 </head>
 
 
 <body>
-    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <nav class="bg-white border-gray-200 ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NEWS</span>
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="{{ asset('assets/logo-type.svg') }}" class="h-8"/>
             </a>
         </div>
     </nav>
     <div class="container mx-auto p-auto text-center mt-4">
-        <a href="{{ route('post.create') }}" type="button"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Add News
-        </a>
-
+          <button class="bg-gray-950 text-gray-400 border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+            <span class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+            <a href="{{ route('post.create') }}" type="button"
+                class="">
+                Add News
+            </a>
+          </button>
 
         <div class="flex flex-wrap justify-center mt-4">
             <!-- Card 1 -->
@@ -83,7 +85,7 @@
                 </div>
             </div>
             @empty
-            <p class="text-5xl"> Data Tidak tersedia</p>
+            <p class="font-semibold text-5xl"><span class="font-black text-8xl">404</span><br>Not Found</p>
             @endforelse ($post as $p)
      
         </div>

@@ -7,6 +7,7 @@
     <title>Detail Data Post - SantriKoding.com</title>
     <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.1/flowbite.min.css" rel="stylesheet">
+    @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100">
 
