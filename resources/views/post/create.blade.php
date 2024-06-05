@@ -12,6 +12,8 @@
         <div class="w-full max-w-md bg-white rounded-lg shadow-md p-6">
           <h2 class="text-2xl font-bold text-gray-900 mb-4">Create News</h2>
           <form action="{{ route('post.store')}}" method="POST" enctype="multipart/form-data" class="flex flex-col">
+            @csrf
+            @method('post')
             <input type="text" id="title" class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="Title Of News" name="title" required>
             <textarea id="description" name="description" class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="Enter Desciption"></textarea>
             <textarea id="content" name="content" class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="Enter Content"></textarea>
